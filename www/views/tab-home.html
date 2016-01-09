@@ -1,0 +1,28 @@
+<ion-view view-title="Home">
+  <ion-content>
+    <ion-list>
+
+      <div class="bar item-input-inset">
+
+        <label class="item-input-wrapper">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="search" ng-model="buscaLivro" placeholder="Buscar">
+        </label>
+
+        <button  ng-click="btnCancelar(buscaLivro)" class="button button-clear">Cancelar</button>
+
+      </div>
+
+      <ion-item class="item-remove-animate item-avatar item-icon-right"
+      ng-repeat="livro in livros | filter: buscaLivro"  type="item-text-wrap" href="#/tab/home/{{livro.id}}">
+
+        <img src="img/book.png">
+        <h2>{{livro.nome}}</h2>
+        <p>{{livro.autor}}</p>
+
+
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+</ion-view>
